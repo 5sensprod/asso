@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <title>Formulaire avec photo</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <div class="page">
+<div id="map"></div>
+        <div class="dropdown">
+            <button class="dropdown-button">Signaler</button>
+            <div class="dropdown-content">
+                <form id="report-form" class="report-form">
+                    <label for="location-input">L'adresse</label>
+                    <div class="input-with-icon">
+                        <input id="location-input" name="address" type="search" placeholder="Adresse" class="input-button"/>
+                        <i id="clear-location-icon" class="fas fa-times-circle"></i>
+                        <i id="geolocation-icon" class="fas fa-location-arrow geo-icon"></i>
+
+                    </div>
+                    <div id="address-results" class="address-results"></div>
+
+                    <input id="latitude-input" type="hidden" name="latitude" />
+                    <input id="longitude-input" type="hidden" name="longitude" />
+                    <input id="street-input" type="hidden" name="street" />
+                    <input id="city-input" type="hidden" name="city" />
+                    <input id="postal-code-input" type="hidden" name="postal_code" />
+
+
+                    <label for="name-input">Le nom du commerce</label>
+                    <div class="input-with-icon">
+                        <input id="name-input" name="name" type="text" placeholder="Nom du commerce"class="input-button"/>
+                        <i id="clear-name-icon" class="fas fa-times-circle"></i>
+                    </div>
+                    <label for="photo-input">Prenez une photo de la source de pollution lumineuse</label>
+                    <button id="start-camera" type="button">Lancer l'appareil photo</button>
+                    <video id="video" class="video-keep" autoplay playsinline style="display: none;"></video>
+                    <button id="capture" style="display: none;" type="button" class="button-cam">Prendre une
+                        photo</button>
+                    <button id="keep" style="display: none;" type="button" class="button-cam">Sélectionner cette
+                        photo</button>
+                    <button id="retry" style="display: none;" type="button" class="button-cam">Reprendre une
+                        photo</button>
+                    <canvas id="canvas" class="video-keep" style="display:none;"></canvas>
+                    <input id="photo-input" type="hidden" name="photo" />
+                    <img id="photo" class="photo-view" src="" alt="Votre photo">
+                    <button id="submit-button" class="submit-button" type="submit">Soumettre</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
